@@ -15,7 +15,12 @@ public class Hand implements Comparable<Hand> {
      * Create a hand from a string containing all cards (e,g, "5C TD AH QS 2D")
      */
     public Hand(String c) {
-        
+    	int i;
+    	this.cards=new ArrayList<Card>();
+    	String [] input = c.split(" ");
+    	for (i=0;i<5;i++) {
+    		this.cards.add(new Card(Card.getRankFromAbbrev(input[i].charAt(0)),Card.getSuitFromAbbrev(input[i].charAt(1))));
+    	}
     }
     
     /**
@@ -23,7 +28,12 @@ public class Hand implements Comparable<Hand> {
 	 * e.g., "TD TC TH 7C 7D" returns True for n=2 and n=3, and False for n=1 and n=4
      */
     protected boolean hasNKind(int n) {
-
+    	int count, i=0;
+    	Card.Rank[] tempRanks;
+    	for (i=0;i<5;i++) {
+    		this.cards.get(i).getRank();
+    	}
+    	if 
     }
     
     /**
